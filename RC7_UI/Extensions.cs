@@ -10,6 +10,6 @@ namespace RC7_UI
 {
     class Extensions
     {
-
+        string test = "123";
     }
 }
