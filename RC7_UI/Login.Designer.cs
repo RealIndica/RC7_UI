@@ -34,7 +34,6 @@
             this.alphaBlendTextBox2 = new ZBobb.AlphaBlendTextBox();
             this.alphaBlendTextBox3 = new ZBobb.AlphaBlendTextBox();
             this.alphaBlendTextBox4 = new ZBobb.AlphaBlendTextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // button1
@@ -113,15 +112,6 @@
             this.alphaBlendTextBox4.TabIndex = 5;
             this.alphaBlendTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(300, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(39, 352);
-            this.panel1.TabIndex = 6;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,7 +119,6 @@
             this.BackgroundImage = global::RC7_UI.Properties.Resources.MainUi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(339, 352);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.alphaBlendTextBox4);
             this.Controls.Add(this.alphaBlendTextBox3);
             this.Controls.Add(this.alphaBlendTextBox2);
@@ -153,6 +142,5 @@
         private ZBobb.AlphaBlendTextBox alphaBlendTextBox2;
         private ZBobb.AlphaBlendTextBox alphaBlendTextBox3;
         private ZBobb.AlphaBlendTextBox alphaBlendTextBox4;
-        private System.Windows.Forms.Panel panel1;
     }
 }
