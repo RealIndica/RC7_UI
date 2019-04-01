@@ -51,3 +51,4 @@ C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.exe
 C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.pdb
 C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\bin\Debug\AlphaBlendTextBox.dll
 C:\Users\Jordan\Documents\GitHub\RC7_UI\RC7_UI\bin\Debug\AlphaBlendTextBox.dll
+C:\Users\Jordan\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.csprojAssemblyReference.cache
