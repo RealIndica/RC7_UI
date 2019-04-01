@@ -84,6 +84,7 @@
             this.WButton = new System.Windows.Forms.Button();
             this.AButton = new System.Windows.Forms.Button();
             this.rightPanel = new System.Windows.Forms.Panel();
+            this.themeGuideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -123,7 +124,7 @@
             this.scriptHubToolStripMenuItem1,
             this.tabsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // showOutputToolStripMenuItem
@@ -155,7 +156,7 @@
             this.backgroundToolStripMenuItem,
             this.iDEFontToolStripMenuItem});
             this.customizationToolStripMenuItem.Name = "customizationToolStripMenuItem";
-            this.customizationToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.customizationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.customizationToolStripMenuItem.Text = "Customization";
             // 
             // scriptEditorToolStripMenuItem
@@ -264,13 +265,13 @@
             // autohookToolStripMenuItem
             // 
             this.autohookToolStripMenuItem.Name = "autohookToolStripMenuItem";
-            this.autohookToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.autohookToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.autohookToolStripMenuItem.Text = "Auto hook";
             // 
             // resetSettingsToolStripMenuItem
             // 
             this.resetSettingsToolStripMenuItem.Name = "resetSettingsToolStripMenuItem";
-            this.resetSettingsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.resetSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resetSettingsToolStripMenuItem.Text = "Reset";
             this.resetSettingsToolStripMenuItem.Click += new System.EventHandler(this.resetSettingsToolStripMenuItem_Click);
             // 
@@ -291,7 +292,7 @@
             this.closeRobloxToolStripMenuItem,
             this.restartToolStripMenuItem});
             this.rc7ToolStripMenuItem.Name = "rc7ToolStripMenuItem";
-            this.rc7ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.rc7ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rc7ToolStripMenuItem.Text = "Rc7";
             // 
             // closeRobloxToolStripMenuItem
@@ -310,19 +311,19 @@
             // scriptsToolStripMenuItem
             // 
             this.scriptsToolStripMenuItem.Name = "scriptsToolStripMenuItem";
-            this.scriptsToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.scriptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.scriptsToolStripMenuItem.Text = "Scripts";
             // 
             // recentToolStripMenuItem
             // 
             this.recentToolStripMenuItem.Name = "recentToolStripMenuItem";
-            this.recentToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.recentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.recentToolStripMenuItem.Text = "Recent";
             // 
             // mapsToolStripMenuItem
             // 
             this.mapsToolStripMenuItem.Name = "mapsToolStripMenuItem";
-            this.mapsToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.mapsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mapsToolStripMenuItem.Text = "Maps";
             // 
             // toolStripMenuItem3
@@ -341,44 +342,45 @@
             // privacyToolStripMenuItem
             // 
             this.privacyToolStripMenuItem.Name = "privacyToolStripMenuItem";
-            this.privacyToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.privacyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.privacyToolStripMenuItem.Text = "Privacy";
             // 
             // scriptingToolStripMenuItem
             // 
             this.scriptingToolStripMenuItem.Name = "scriptingToolStripMenuItem";
-            this.scriptingToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.scriptingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.scriptingToolStripMenuItem.Text = "Scripting";
             // 
             // changeLogToolStripMenuItem
             // 
             this.changeLogToolStripMenuItem.Name = "changeLogToolStripMenuItem";
-            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.changeLogToolStripMenuItem.Text = "Change log";
             // 
             // environmentToolStripMenuItem
             // 
             this.environmentToolStripMenuItem.Name = "environmentToolStripMenuItem";
-            this.environmentToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.environmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.environmentToolStripMenuItem.Text = "Environment";
             // 
             // questionsToolStripMenuItem
             // 
             this.questionsToolStripMenuItem.Name = "questionsToolStripMenuItem";
-            this.questionsToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.questionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.questionsToolStripMenuItem.Text = "Questions";
             // 
             // forumsToolStripMenuItem
             // 
             this.forumsToolStripMenuItem.Name = "forumsToolStripMenuItem";
-            this.forumsToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.forumsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.forumsToolStripMenuItem.Text = "Forums";
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openDirectoryToolStripMenuItem,
-            this.downloadThemesToolStripMenuItem});
+            this.downloadThemesToolStripMenuItem,
+            this.themeGuideToolStripMenuItem});
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(79, 20);
             this.toolStripMenuItem5.Text = "Edit Theme";
@@ -386,13 +388,13 @@
             // openDirectoryToolStripMenuItem
             // 
             this.openDirectoryToolStripMenuItem.Name = "openDirectoryToolStripMenuItem";
-            this.openDirectoryToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.openDirectoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openDirectoryToolStripMenuItem.Text = "Open Directory";
             // 
             // downloadThemesToolStripMenuItem
             // 
             this.downloadThemesToolStripMenuItem.Name = "downloadThemesToolStripMenuItem";
-            this.downloadThemesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.downloadThemesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.downloadThemesToolStripMenuItem.Text = "Download Themes";
             // 
             // panel1
@@ -571,6 +573,12 @@
             this.rightPanel.Size = new System.Drawing.Size(39, 328);
             this.rightPanel.TabIndex = 12;
             // 
+            // themeGuideToolStripMenuItem
+            // 
+            this.themeGuideToolStripMenuItem.Name = "themeGuideToolStripMenuItem";
+            this.themeGuideToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.themeGuideToolStripMenuItem.Text = "Theme Guide";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -660,6 +668,7 @@
         private System.Windows.Forms.ToolStripMenuItem forumsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openDirectoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem downloadThemesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem themeGuideToolStripMenuItem;
     }
 }
 
