@@ -68,6 +68,7 @@
             this.alphaBlendTextBox1.Size = new System.Drawing.Size(147, 23);
             this.alphaBlendTextBox1.TabIndex = 2;
             this.alphaBlendTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.alphaBlendTextBox1.TextChanged += new System.EventHandler(this.alphaBlendTextBox1_TextChanged);
             // 
             // alphaBlendTextBox2
             // 
@@ -82,6 +83,7 @@
             this.alphaBlendTextBox2.Size = new System.Drawing.Size(147, 23);
             this.alphaBlendTextBox2.TabIndex = 3;
             this.alphaBlendTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.alphaBlendTextBox2.TextChanged += new System.EventHandler(this.alphaBlendTextBox2_TextChanged);
             // 
             // panel1
             // 

@@ -270,9 +270,11 @@ namespace RC7_UI
 
         }
 
+        // exit process //
+
         private void closeRobloxToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+           // Process[] ProcessList = System.Diagnostics.Process.GetProcessByName("RobloxPlayerBeta.exe");
         }
 
         private void ToolBar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

@@ -301,7 +301,6 @@
             this.closeRobloxToolStripMenuItem.Name = "closeRobloxToolStripMenuItem";
             this.closeRobloxToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.closeRobloxToolStripMenuItem.Text = "Close Roblox";
-            this.closeRobloxToolStripMenuItem.Click += new System.EventHandler(this.closeRobloxToolStripMenuItem_Click);
             // 
             // restartToolStripMenuItem
             // 

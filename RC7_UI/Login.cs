@@ -108,5 +108,15 @@ namespace RC7_UI
                 }
             }
         }
+
+        private void alphaBlendTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alphaBlendTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
