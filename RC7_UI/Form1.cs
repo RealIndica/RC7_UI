@@ -251,5 +251,10 @@ namespace RC7_UI
         {
 
         }
+
+        private void ToolBar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
