@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AlphaBlendTextBox">
+      <HintPath>.\AlphaBlendTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\Ascienth_Roblox_Standalone\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>

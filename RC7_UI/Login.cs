@@ -38,7 +38,7 @@ namespace RC7_UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (_Login("123", "123"))
+            if (_Login(alphaBlendTextBox1.Text, alphaBlendTextBox2.Text))
             {
                 //good
                 mainForm frm = new mainForm();

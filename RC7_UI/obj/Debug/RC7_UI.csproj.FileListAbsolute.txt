@@ -37,3 +37,17 @@ C:\Users\Jordan\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.csproj.CoreCompi
 C:\Users\Jordan\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.csproj.CopyComplete
 C:\Users\Jordan\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.exe
 C:\Users\Jordan\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.pdb
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\bin\Debug\RC7_UI.exe.config
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\bin\Debug\RC7_UI.exe
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\bin\Debug\RC7_UI.pdb
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.csprojAssemblyReference.cache
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.mainForm.resources
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.Login.resources
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.Output.resources
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.Properties.Resources.resources
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.csproj.GenerateResource.cache
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.csproj.CoreCompileInputs.cache
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.csproj.CopyComplete
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.exe
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\obj\Debug\RC7_UI.pdb
+C:\Users\Leonl\Documents\GitHub\RC7_UI\RC7_UI\bin\Debug\AlphaBlendTextBox.dll
