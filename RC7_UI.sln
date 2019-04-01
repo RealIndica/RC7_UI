@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RC7_UI", "RC7_UI\RC7_UI.csproj", "{0BC98DCA-B0EB-413B-BD3C-490DA1122482}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BC98DCA-B0EB-413B-BD3C-490DA1122482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC98DCA-B0EB-413B-BD3C-490DA1122482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC98DCA-B0EB-413B-BD3C-490DA1122482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC98DCA-B0EB-413B-BD3C-490DA1122482}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA06A98E-4AF2-4CB5-9CB6-9210A1BCA969}
+	EndGlobalSection
+EndGlobal
