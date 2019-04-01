@@ -236,5 +236,20 @@ namespace RC7_UI
             Application.Exit();
             Environment.Exit(0);
         }
+
+        private void scriptHubToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resetSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeRobloxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
