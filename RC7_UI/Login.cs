@@ -33,6 +33,7 @@ namespace RC7_UI
         {
             this.BackgroundImage = Image.FromFile(_tempThemeDir + "MainUi.bmp");
             button1.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
+            //rightPanel.BackgroundImage = Image.FromFile(_tempThemeDir + "Hide_Side.bmp");
             addRegkey();
         }
 
