@@ -91,13 +91,13 @@
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showOutputToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // showOutputToolStripMenuItem
             // 
             this.showOutputToolStripMenuItem.Name = "showOutputToolStripMenuItem";
-            this.showOutputToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.showOutputToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.showOutputToolStripMenuItem.Text = "Show Output";
             this.showOutputToolStripMenuItem.Click += new System.EventHandler(this.showOutputToolStripMenuItem_Click);
             // 
@@ -165,7 +165,7 @@
             // openButton
             // 
             this.openButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.openButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.openButton.FlatAppearance.BorderSize = 0;
             this.openButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.openButton.Font = new System.Drawing.Font("Lucida Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -183,7 +183,7 @@
             // executeButton
             // 
             this.executeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.executeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.executeButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.executeButton.FlatAppearance.BorderSize = 0;
             this.executeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.executeButton.Font = new System.Drawing.Font("Lucida Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -201,7 +201,7 @@
             // clearButton
             // 
             this.clearButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.clearButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.clearButton.FlatAppearance.BorderSize = 0;
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.Font = new System.Drawing.Font("Lucida Sans", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -219,7 +219,7 @@
             // muteButton
             // 
             this.muteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.muteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.muteButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.muteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.muteButton.Location = new System.Drawing.Point(5, 293);
             this.muteButton.Name = "muteButton";
@@ -230,7 +230,7 @@
             // roexploitButton
             // 
             this.roexploitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.roexploitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roexploitButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.roexploitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roexploitButton.Location = new System.Drawing.Point(5, 257);
             this.roexploitButton.Name = "roexploitButton";
@@ -241,7 +241,7 @@
             // downloadButton
             // 
             this.downloadButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.downloadButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.downloadButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.downloadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.downloadButton.Location = new System.Drawing.Point(5, 221);
             this.downloadButton.Name = "downloadButton";
@@ -252,7 +252,7 @@
             // saveButton
             // 
             this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.Location = new System.Drawing.Point(5, 113);
             this.saveButton.Name = "saveButton";
@@ -263,7 +263,7 @@
             // WButton
             // 
             this.WButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.WButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.WButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.WButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.WButton.Location = new System.Drawing.Point(5, 149);
             this.WButton.Name = "WButton";
@@ -274,7 +274,7 @@
             // AButton
             // 
             this.AButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.AButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AButton.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.AButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AButton.Location = new System.Drawing.Point(5, 185);
             this.AButton.Name = "AButton";
