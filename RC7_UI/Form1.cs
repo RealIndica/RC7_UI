@@ -23,6 +23,17 @@ namespace RC7_UI
         string binLocation = Application.StartupPath + "//bin";
         string defPath = Application.StartupPath + "//bin//def";
 
+        Image side;
+        Image back;
+        Image save;
+        Image WordWrapB;
+        Image AutoB;
+        Image DownloadU;
+        Image Krystal;
+        Image Mute;
+        Image buttonIdle;
+        Image buttonHover;
+
         public mainForm()
         {
             InitializeComponent();
@@ -32,22 +43,34 @@ namespace RC7_UI
         {
             try
             {
+                //images
+                side = Image.FromFile(_tempThemeDir + "Hide_Side.bmp");
+                back = Image.FromFile(_tempThemeDir + "MainUi.bmp");
+                save = Image.FromFile(_tempThemeDir + "Save_In.bmp");
+                WordWrapB = Image.FromFile(_tempThemeDir + "WordWrap_In.bmp");
+                AutoB = Image.FromFile(_tempThemeDir + "Auto_In.bmp");
+                DownloadU = Image.FromFile(_tempThemeDir + "Google_Drive_In.bmp");
+                Krystal = Image.FromFile(_tempThemeDir + "Krystal_In.bmp");
+                Mute = Image.FromFile(_tempThemeDir + "Wofly_In.bmp");
+                buttonIdle = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
+                buttonHover = 
+
                 //main form elements
-                rightPanel.BackgroundImage = Image.FromFile(_tempThemeDir + "Hide_Side.bmp");
-                this.BackgroundImage = Image.FromFile(_tempThemeDir + "MainUi.bmp");
+                rightPanel.BackgroundImage = side;
+                this.BackgroundImage = back;
 
                 //side buttons
-                saveButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Save_In.bmp");
-                WButton.BackgroundImage = Image.FromFile(_tempThemeDir + "WordWrap_In.bmp");
-                AButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Auto_In.bmp");
-                downloadButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Google_Drive_In.bmp");
-                roexploitButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Krystal_In.bmp");
-                muteButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Wofly_In.bmp");
+                saveButton.BackgroundImage = save;
+                WButton.BackgroundImage = WordWrapB;
+                AButton.BackgroundImage = AutoB;
+                downloadButton.BackgroundImage = DownloadU;
+                roexploitButton.BackgroundImage = Krystal;
+                muteButton.BackgroundImage = Mute;
 
                 //main gui buttons
-                openButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
-                executeButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
-                clearButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
+                openButton.BackgroundImage = buttonIdle;
+                executeButton.BackgroundImage = buttonIdle;
+                clearButton.BackgroundImage = buttonIdle;
             }
             catch (Exception)
             {
@@ -180,34 +203,34 @@ namespace RC7_UI
         //open
         private void openButton_MouseEnter(object sender, EventArgs e)
         {
-            openButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Hover.bmp");
+            openButton.BackgroundImage = buttonHover;
         }
 
         private void openButton_MouseLeave(object sender, EventArgs e)
         {
-            openButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
+            openButton.BackgroundImage = buttonIdle;
         }
 
         //execute
         private void executeButton_MouseEnter(object sender, EventArgs e)
         {
-            executeButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Hover.bmp");
+            executeButton.BackgroundImage = buttonHover;
         }
 
         private void executeButton_MouseLeave(object sender, EventArgs e)
         {
-            executeButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
+            executeButton.BackgroundImage = buttonIdle;
         }
 
         //clear
         private void clearButton_MouseEnter(object sender, EventArgs e)
         {
-            clearButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Hover.bmp");
+            clearButton.BackgroundImage = buttonHover;
         }
 
         private void clearButton_MouseLeave(object sender, EventArgs e)
         {
-            clearButton.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
+            clearButton.BackgroundImage = buttonIdle;
         }
 
         private void showOutputToolStripMenuItem_Click(object sender, EventArgs e)
@@ -255,6 +278,65 @@ namespace RC7_UI
         private void ToolBar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void openDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(_themeDir);
+        }
+
+        private void loadThemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();       
+            string _LoadFile = "";
+
+            file.InitialDirectory = _themeDir;
+            file.Filter = "Zip Files|*.zip;*.rar";
+            file.Multiselect = false;
+
+            if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                _LoadFile = file.FileName;
+            }
+            
+            if (_LoadFile == "" || _LoadFile == null)
+            {
+                MessageBox.Show("No file selected", "Unable to load theme", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.BackgroundImage = null;
+                foreach (Control c in this.Controls)
+                {
+                    c.BackgroundImage = null;
+                }
+
+                foreach (Control c in rightPanel.Controls)
+                {
+                    c.BackgroundImage = null;
+                }
+
+                side.Dispose();
+                back.Dispose();
+                save.Dispose();
+                WordWrapB.Dispose();
+                AutoB.Dispose();
+                DownloadU.Dispose();
+                Krystal.Dispose();
+                Mute.Dispose();
+                buttonIdle.Dispose();
+                buttonHover.Dispose();
+
+                var files = Directory.GetFiles(_tempThemeDir);
+
+                foreach (string f in files)
+                {
+                    File.Delete(f);                    
+                }
+
+                ZipFile.ExtractToDirectory(_LoadFile, _tempThemeDir);
+                loadTheme();
+            }
         }
     }
 }

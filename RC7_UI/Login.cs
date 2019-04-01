@@ -19,6 +19,11 @@ namespace RC7_UI
     {
         string _tempThemeDir = Application.StartupPath + "\\bin\\Themes\\temp\\";
 
+        Image main;
+        Image idle;
+        Image side;
+        Image hover;
+
         public Login()
         {
             InitializeComponent();
@@ -31,9 +36,18 @@ namespace RC7_UI
 
         private void Login_Load(object sender, EventArgs e)
         {
-            this.BackgroundImage = Image.FromFile(_tempThemeDir + "MainUi.bmp");
-            button1.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
-            //rightPanel.BackgroundImage = Image.FromFile(_tempThemeDir + "Hide_Side.bmp");
+            main = Image.FromFile(_tempThemeDir + "MainUi.bmp");
+            idle = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
+            side = Image.FromFile(_tempThemeDir + "Hide_Side.bmp");
+            hover = Image.FromFile(_tempThemeDir + "Button_Hover.bmp");
+
+            alphaBlendTextBox1.BorderStyle = BorderStyle.None;
+            alphaBlendTextBox2.BorderStyle = BorderStyle.None;
+            button1.FlatStyle = FlatStyle.Flat;
+
+            this.BackgroundImage = main;
+            button1.BackgroundImage = idle;
+            panel1.BackgroundImage = side;
             addRegkey();
         }
 
@@ -44,6 +58,19 @@ namespace RC7_UI
                 //good
                 mainForm frm = new mainForm();
                 frm.Show();
+
+                //dispose of theme correctly
+                this.BackgroundImage = null;
+                foreach (Control c in this.Controls)
+                {
+                    c.BackgroundImage = null;
+                }
+
+                main.Dispose();
+                idle.Dispose();
+                side.Dispose();
+                hover.Dispose();
+
                 this.Hide();
             }
             else
@@ -54,12 +81,12 @@ namespace RC7_UI
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            button1.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Hover.bmp");
+            button1.BackgroundImage = hover;
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            button1.BackgroundImage = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
+            button1.BackgroundImage = idle;
         }
 
         void addRegkey()

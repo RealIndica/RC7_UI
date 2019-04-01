@@ -32,19 +32,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.alphaBlendTextBox1 = new ZBobb.AlphaBlendTextBox();
             this.alphaBlendTextBox2 = new ZBobb.AlphaBlendTextBox();
-            this.alphaBlendTextBox3 = new ZBobb.AlphaBlendTextBox();
-            this.alphaBlendTextBox4 = new ZBobb.AlphaBlendTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::RC7_UI.Properties.Resources.Button_Idle;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Lucida Sans", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.button1.Location = new System.Drawing.Point(102, 182);
@@ -63,12 +60,12 @@
             // 
             this.alphaBlendTextBox1.BackAlpha = 0;
             this.alphaBlendTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.alphaBlendTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.alphaBlendTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.alphaBlendTextBox1.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alphaBlendTextBox1.ForeColor = System.Drawing.Color.DarkGray;
             this.alphaBlendTextBox1.Location = new System.Drawing.Point(79, 123);
             this.alphaBlendTextBox1.Name = "alphaBlendTextBox1";
-            this.alphaBlendTextBox1.Size = new System.Drawing.Size(147, 16);
+            this.alphaBlendTextBox1.Size = new System.Drawing.Size(147, 23);
             this.alphaBlendTextBox1.TabIndex = 2;
             this.alphaBlendTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -76,46 +73,19 @@
             // 
             this.alphaBlendTextBox2.BackAlpha = 0;
             this.alphaBlendTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.alphaBlendTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.alphaBlendTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.alphaBlendTextBox2.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alphaBlendTextBox2.ForeColor = System.Drawing.Color.DarkGray;
             this.alphaBlendTextBox2.Location = new System.Drawing.Point(79, 155);
             this.alphaBlendTextBox2.Name = "alphaBlendTextBox2";
             this.alphaBlendTextBox2.PasswordChar = '•';
-            this.alphaBlendTextBox2.Size = new System.Drawing.Size(147, 16);
+            this.alphaBlendTextBox2.Size = new System.Drawing.Size(147, 23);
             this.alphaBlendTextBox2.TabIndex = 3;
             this.alphaBlendTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // alphaBlendTextBox3
-            // 
-            this.alphaBlendTextBox3.BackAlpha = 0;
-            this.alphaBlendTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.alphaBlendTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.alphaBlendTextBox3.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alphaBlendTextBox3.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.alphaBlendTextBox3.Location = new System.Drawing.Point(79, 122);
-            this.alphaBlendTextBox3.Name = "alphaBlendTextBox3";
-            this.alphaBlendTextBox3.Size = new System.Drawing.Size(147, 18);
-            this.alphaBlendTextBox3.TabIndex = 4;
-            this.alphaBlendTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // alphaBlendTextBox4
-            // 
-            this.alphaBlendTextBox4.BackAlpha = 0;
-            this.alphaBlendTextBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.alphaBlendTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.alphaBlendTextBox4.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alphaBlendTextBox4.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.alphaBlendTextBox4.Location = new System.Drawing.Point(79, 154);
-            this.alphaBlendTextBox4.Name = "alphaBlendTextBox4";
-            this.alphaBlendTextBox4.PasswordChar = '•';
-            this.alphaBlendTextBox4.Size = new System.Drawing.Size(147, 18);
-            this.alphaBlendTextBox4.TabIndex = 5;
-            this.alphaBlendTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // panel1
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(300, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(39, 352);
@@ -125,12 +95,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RC7_UI.Properties.Resources.MainUi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(339, 352);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.alphaBlendTextBox4);
-            this.Controls.Add(this.alphaBlendTextBox3);
             this.Controls.Add(this.alphaBlendTextBox2);
             this.Controls.Add(this.alphaBlendTextBox1);
             this.Controls.Add(this.button1);
@@ -150,8 +117,6 @@
         private System.Windows.Forms.Button button1;
         private ZBobb.AlphaBlendTextBox alphaBlendTextBox1;
         private ZBobb.AlphaBlendTextBox alphaBlendTextBox2;
-        private ZBobb.AlphaBlendTextBox alphaBlendTextBox3;
-        private ZBobb.AlphaBlendTextBox alphaBlendTextBox4;
         private System.Windows.Forms.Panel panel1;
     }
 }
