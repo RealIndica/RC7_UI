@@ -157,7 +157,7 @@ namespace RC7_UI
 
         void initScript()
         {
-            runJS("SetTheme(\"Dark\")");
+            //runJS("SetTheme(\"Dark\")");
             runJS("SwitchFontSize(11)");
             addBase();
             addGlobalF();
