@@ -19,6 +19,8 @@ namespace RC7_UI
     {
         string binLocation = Application.StartupPath + "//bin";
         string defPath = Application.StartupPath + "//bin//def";
+        string _comOUT = "RC7_SCRIPT";
+        Communication com = new Communication();
 
         public ScriptEditor()
         {
@@ -131,9 +133,14 @@ namespace RC7_UI
             runJS("SetTheme(\"Light\")");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        string getScript(WebBrowser bs)
         {
-            //run script
+            return bs.Document.InvokeScript("GetText").ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {           
+            com.sendPipeData(_comOUT, getScript(webBrowser1));
         }
     }
 }
