@@ -107,6 +107,7 @@ namespace RC7_UI
         private void Form1_Load(object sender, EventArgs e)
         {
             Extensions.ScriptIDE ide = new Extensions.ScriptIDE(tabControl1.TabPages[0]);
+            tabControl1.TabPages.Add("+");
             ide.makeIDE();
             initToolTips();
             setDefPos();
@@ -323,6 +324,36 @@ namespace RC7_UI
             {
                 Tabs outx = new Tabs(this);
                 outx.Show();
+            }
+        }
+
+        int tabCount = 2;
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.TabPages[tabControl1.SelectedIndex].Text == "+")
+            {
+                tabControl1.TabPages.Insert(tabControl1.TabPages.Count - 1, "(" + tabCount.ToString() + ").lua");
+                tabControl1.SelectedIndex = tabControl1.TabPages.Count - 2;
+                tabCount++;
+                Extensions.ScriptIDE ide = new Extensions.ScriptIDE(tabControl1.TabPages[tabControl1.SelectedIndex]);
+                ide.makeIDE();
+            } else
+            {
+
+            }
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabControl1.SelectedTab);
+        }
+
+        private void tabControl1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(this.PointToScreen(e.Location));
             }
         }
     }
