@@ -10,11 +10,10 @@ using System.Windows.Forms;
 
 namespace RC7_UI
 {
-    public partial class Output : Form
+    public partial class Tabs : Form
     {
         Form mainform;
-
-        public Output(Form frm)
+        public Tabs(Form frm)
         {
             InitializeComponent();
             mainform = frm;
@@ -24,24 +23,14 @@ namespace RC7_UI
         {
             while (true)
             {
-                this.Location = new Point(mainform.Location.X + 15, mainform.Location.Y + 387);
+                this.Location = new Point(mainform.Location.X - this.Size.Width, mainform.Location.Y + 55);
                 System.Threading.Thread.Sleep(1);
             }
         }
 
-        private void Output_Load(object sender, EventArgs e)
+        private void Tabs_Load(object sender, EventArgs e)
         {
             Task.Factory.StartNew(() => { posUpdate(); });
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

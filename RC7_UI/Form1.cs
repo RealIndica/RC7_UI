@@ -53,7 +53,7 @@ namespace RC7_UI
                 Krystal = Image.FromFile(_tempThemeDir + "Krystal_In.bmp");
                 Mute = Image.FromFile(_tempThemeDir + "Wofly_In.bmp");
                 buttonIdle = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
-                buttonHover = 
+                buttonHover = Image.FromFile(_tempThemeDir + "Button_Hover.bmp");
 
                 //main form elements
                 rightPanel.BackgroundImage = side;
@@ -77,12 +77,6 @@ namespace RC7_UI
                 MessageBox.Show("Unable to load theme correctly.\r\nPlease make sure all files are in the temp directory or reinstall RC7.", "Theme Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(0);
             }
-        }
-
-        void showOutput()
-        {
-            Output outx = new Output(this);
-            outx.Show();
         }
 
         void initToolTips()
@@ -110,94 +104,15 @@ namespace RC7_UI
             this.Top = ((rightmost.WorkingArea.Bottom / 2) + 200) - this.Height;
         }
 
-        void runJS(string js)
-        {
-            HtmlElement head = webBrowser1.Document.GetElementsByTagName("head")[0];
-            HtmlElement script = webBrowser1.Document.CreateElement("script");
-            IHTMLScriptElement element = (IHTMLScriptElement)script.DomElement;
-            element.text = js;
-            head.AppendChild(script);
-        }
-
-        void addIntel(string label, string kind, string detail, string insertText)
-        {
-            string label1 = @"""" + label + @"""";
-            string kind1 = @"""" + kind + @"""";
-            string detail1 = @"""" + detail + @"""";
-            string insertText1 = @"""" + insertText + @"""";
-            string built = "AddIntellisense(" + label1 + "," + kind1 + "," + detail1 + "," + insertText1 + ")";
-            //MessageBox.Show(built);
-            runJS(built);
-        }
-
-        void addGlobalF()
-        {
-            string[] lines = File.ReadAllLines(defPath + "//globalf.txt");
-            foreach (string line in lines)
-            {
-                if (line.Contains(':'))
-                {
-                    addIntel(line, "Function", line, line.Substring(1));
-                }
-                else
-                {
-                    addIntel(line, "Function", line, line);
-                }
-            }
-        }
-
-        void addGlobalV()
-        {
-            foreach (string line in File.ReadLines(defPath + "//globalv.txt"))
-            {
-                addIntel(line, "Variable", line, line);
-            }
-        }
-
-        void addGlobalNS()
-        {
-            foreach (string line in File.ReadLines(defPath + "//globalns.txt"))
-            {
-                addIntel(line, "Class", line, line);
-            }
-        }
-
-        void addMath()
-        {
-            foreach (string line in File.ReadLines(defPath + "//classfunc.txt"))
-            {
-                addIntel(line, "Method", line, line);
-            }
-        }
-
-        void addBase()
-        {
-            foreach (string line in File.ReadLines(defPath + "//base.txt"))
-            {
-                addIntel(line, "Keyword", line, line);
-            }
-        }
-
-        void initScript()
-        {
-            //runJS("SetTheme(\"Dark\")");
-            runJS("SwitchFontSize(11)");
-            addBase();
-            addGlobalF();
-            addGlobalV();
-            addGlobalNS();
-            addMath();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            webBrowser1.Url = new Uri(string.Format("file:///{0}\\bin\\Monaco.html", Directory.GetCurrentDirectory()));
-            //messagebox to mainly fix browser bug
-            MessageBox.Show("Welcome to RC7");
-            initScript();
+            Extensions.ScriptIDE ide = new Extensions.ScriptIDE(tabControl1.TabPages[0]);
+            ide.makeIDE();
             initToolTips();
             setDefPos();
-            loadTheme();           
+            loadTheme();
+            Extensions.configReader cr = new Extensions.configReader(this);
+            cr.readConfig();
         }
 
         //open
@@ -249,7 +164,8 @@ namespace RC7_UI
 
             if (!open)
             {
-                showOutput();
+                Output outx = new Output(this);
+                outx.Show();
             }
         }
 
@@ -262,7 +178,23 @@ namespace RC7_UI
 
         private void scriptHubToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            FormCollection fc = Application.OpenForms;
 
+            bool open = false;
+
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == "ScriptEditor")
+                {
+                    open = true;
+                }
+            }
+
+            if (!open)
+            {
+                ScriptEditor se = new ScriptEditor();
+                se.Show();
+            }
         }
 
         private void resetSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -272,7 +204,8 @@ namespace RC7_UI
 
         private void closeRobloxToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Process[] processes = Process.GetProcessesByName("RobloxPlayerBeta");
+            processes[0].Kill();
         }
 
         private void ToolBar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -336,6 +269,60 @@ namespace RC7_UI
 
                 ZipFile.ExtractToDirectory(_LoadFile, _tempThemeDir);
                 loadTheme();
+                Extensions.configReader cr = new Extensions.configReader(this);
+                cr.readConfig();
+            }
+        }
+
+        private void restartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(System.AppDomain.CurrentDomain.FriendlyName);
+            Environment.Exit(0);
+        }
+
+        private void executeButton_Click(object sender, EventArgs e)
+        {
+            //execute script
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            //clear script box
+        }
+
+        private void creditsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Lead Coders :\r\n          CheatBuddy\r\n          Indica\r\nGFX :\r\n          KLambda", "Credits");
+        }
+
+        private void darkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCollection fc = Application.OpenForms;
+
+            bool open = false;
+
+            foreach (Form frm in fc)
+            {
+                if (frm.Name == "Tabs")
+                {
+                    open = true;
+                }
+            }
+
+            if (!open)
+            {
+                Tabs outx = new Tabs(this);
+                outx.Show();
             }
         }
     }

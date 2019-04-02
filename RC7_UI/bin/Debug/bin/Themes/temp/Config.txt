@@ -1,13 +1,1 @@
-Buttons:100,100,100;
-Margin:240,240,240;
-Default:0,0,0;
-Comments:0,138,0;
-Strings:127,58,193;
-Symbols:127,127,0;
-Numbers:58,171,214;
-Keywords:0,0,125;
-ScriptIDE:255,255,255;
-Selection:192,192,192;
-Output:255,255,255;
-Font:SF Pro Text;
-Fontsize:1000;
+FontColor:100,100,100;

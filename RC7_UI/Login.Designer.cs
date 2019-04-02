@@ -61,11 +61,11 @@
             this.alphaBlendTextBox1.BackAlpha = 0;
             this.alphaBlendTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.alphaBlendTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alphaBlendTextBox1.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alphaBlendTextBox1.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alphaBlendTextBox1.ForeColor = System.Drawing.Color.DarkGray;
             this.alphaBlendTextBox1.Location = new System.Drawing.Point(79, 123);
             this.alphaBlendTextBox1.Name = "alphaBlendTextBox1";
-            this.alphaBlendTextBox1.Size = new System.Drawing.Size(147, 23);
+            this.alphaBlendTextBox1.Size = new System.Drawing.Size(147, 25);
             this.alphaBlendTextBox1.TabIndex = 2;
             this.alphaBlendTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -74,12 +74,12 @@
             this.alphaBlendTextBox2.BackAlpha = 0;
             this.alphaBlendTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.alphaBlendTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alphaBlendTextBox2.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alphaBlendTextBox2.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alphaBlendTextBox2.ForeColor = System.Drawing.Color.DarkGray;
             this.alphaBlendTextBox2.Location = new System.Drawing.Point(79, 155);
             this.alphaBlendTextBox2.Name = "alphaBlendTextBox2";
             this.alphaBlendTextBox2.PasswordChar = '•';
-            this.alphaBlendTextBox2.Size = new System.Drawing.Size(147, 23);
+            this.alphaBlendTextBox2.Size = new System.Drawing.Size(147, 25);
             this.alphaBlendTextBox2.TabIndex = 3;
             this.alphaBlendTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
