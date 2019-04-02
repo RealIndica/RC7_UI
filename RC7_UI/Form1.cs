@@ -23,6 +23,11 @@ namespace RC7_UI
         string binLocation = Application.StartupPath + "//bin";
         string defPath = Application.StartupPath + "//bin//def";
 
+        string _comIN = "RC7_OUT";
+        string _comOUT = "RC7_IN";
+
+        Communication com = new Communication();
+
         Image side;
         Image back;
         Image save;
@@ -106,6 +111,9 @@ namespace RC7_UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Output outx = new Output(this);
+            outx.Show();
+            outx.Visible = false;
             Extensions.ScriptIDE ide = new Extensions.ScriptIDE(tabControl1.TabPages[0]);
             tabControl1.TabPages.Add("+");
             ide.makeIDE();
@@ -114,6 +122,15 @@ namespace RC7_UI
             loadTheme();
             Extensions.configReader cr = new Extensions.configReader(this);
             cr.readConfig();
+        }
+
+        void runJS(string js, WebBrowser bs)
+        {
+            HtmlElement head = bs.Document.GetElementsByTagName("head")[0];
+            HtmlElement script = bs.Document.CreateElement("script");
+            IHTMLScriptElement element = (IHTMLScriptElement)script.DomElement;
+            element.text = js;
+            head.AppendChild(script);
         }
 
         //open
@@ -153,20 +170,12 @@ namespace RC7_UI
         {
             FormCollection fc = Application.OpenForms;
 
-            bool open = false;
-
             foreach (Form frm in fc)
             {
-                if (frm.Name == "Output")
+                if (frm.Name == "Output" && frm.Visible == false)
                 {
-                    open = true;
+                    frm.Visible = true;
                 }
-            }
-
-            if (!open)
-            {
-                Output outx = new Output(this);
-                outx.Show();
             }
         }
 
@@ -284,11 +293,51 @@ namespace RC7_UI
         private void executeButton_Click(object sender, EventArgs e)
         {
             //execute script
+            WebBrowser bs = (WebBrowser)tabControl1.SelectedTab.Controls[0];
+            com.sendPipeData(_comOUT, getScript(bs));
+            //MessageBox.Show(getScript(bs));
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
             //clear script box
+            WebBrowser bs = (WebBrowser)tabControl1.SelectedTab.Controls[0];
+            runJS("SetText(\"\")", bs);
+        }
+
+        string getScript(WebBrowser bs)
+        {
+            return bs.Document.InvokeScript("GetText").ToString();
+        }
+
+        private void openButton_Click(object sender, EventArgs e)
+        {
+            WebBrowser bs = (WebBrowser)tabControl1.SelectedTab.Controls[0];
+            OpenFileDialog file = new OpenFileDialog();
+            string _LoadFile = "";
+
+            file.InitialDirectory = _themeDir;
+            file.Filter = "Lua Files|*.lua;*.txt";
+            file.Multiselect = false;
+
+            if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                _LoadFile = file.FileName;
+            }
+
+            try
+            {
+                StreamReader sr = new StreamReader(_LoadFile);
+                string Script = sr.ReadToEnd();
+                sr.Dispose();
+                string ScriptFormatted = Script.Replace("\"", @"\""");
+                string ScriptLined = ScriptFormatted.Replace(Environment.NewLine, @"\n");
+                string Formatted = @"" + "SetText(\"" + ScriptLined + @"""" + ")";
+                string Final = Formatted.Replace(@"\\", @"\");
+                string Finala = Final.Replace(@"\\", @"\");
+                runJS(Finala, bs);
+            }
+            catch (Exception) { }
         }
 
         private void creditsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -346,7 +395,7 @@ namespace RC7_UI
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tabControl1.TabPages.Remove(tabControl1.SelectedTab);
+            int lastidx = tabControl1.SelectedIndex;
         }
 
         private void tabControl1_MouseDown(object sender, MouseEventArgs e)

@@ -31,12 +31,13 @@ namespace RC7_UI
 
         private void Output_Load(object sender, EventArgs e)
         {
+            this.Visible = false;
             Task.Factory.StartNew(() => { posUpdate(); });
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Visible = false;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)

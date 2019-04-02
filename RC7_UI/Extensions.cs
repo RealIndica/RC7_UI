@@ -159,7 +159,7 @@ namespace RC7_UI
             void timerhandle(object sender, EventArgs e)
             {
                 Timer tm = new Timer();
-                tm.Interval = 1000;
+                tm.Interval = 10;
                 tm.Tick += tmTick;
                 curtm = tm;
                 curtm.Start();
