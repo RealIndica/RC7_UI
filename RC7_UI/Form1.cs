@@ -20,8 +20,9 @@ namespace RC7_UI
         string _themeDir = Application.StartupPath + "\\bin\\Themes\\";
         string _tempThemeDir = Application.StartupPath + "\\bin\\Themes\\temp\\";
 
-        string binLocation = Application.StartupPath + "//bin";
-        string defPath = Application.StartupPath + "//bin//def";
+        string binLocation = Application.StartupPath + "\\bin";
+        string defPath = Application.StartupPath + "\\bin\\def";
+        string scriptPath = Application.StartupPath + "\\bin\\scripts\\";
 
         string _comOUT = "RC7_SCRIPT";
 
@@ -315,7 +316,7 @@ namespace RC7_UI
             OpenFileDialog file = new OpenFileDialog();
             string _LoadFile = "";
 
-            file.InitialDirectory = _themeDir;
+            file.InitialDirectory = scriptPath;
             file.Filter = "Lua Files|*.lua;*.txt";
             file.Multiselect = false;
 

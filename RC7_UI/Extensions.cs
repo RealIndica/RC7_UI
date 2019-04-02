@@ -76,8 +76,8 @@ namespace RC7_UI
         {
             Control parent;
             WebBrowser curBrows;
-            string binLocation = Application.StartupPath + "//bin";
-            string defPath = Application.StartupPath + "//bin//def";
+            string binLocation = Application.StartupPath + "\\bin";
+            string defPath = Application.StartupPath + "\\bin\\def";
 
             public ScriptIDE(Control targ)
             {
@@ -187,7 +187,7 @@ namespace RC7_UI
                 browser.IsWebBrowserContextMenuEnabled = false;
                 browser.Navigate(string.Format("file:///{0}\\bin\\Monaco.html", Directory.GetCurrentDirectory()));
                 browser.Parent = parent;
-                browser.Dock = DockStyle.Fill;
+                browser.Dock = DockStyle.Fill;               
                 curBrows = browser;
                 browser.Navigated += timerhandle;
             }

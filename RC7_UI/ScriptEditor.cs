@@ -17,9 +17,10 @@ namespace RC7_UI
 {
     public partial class ScriptEditor : Form
     {
-        string binLocation = Application.StartupPath + "//bin";
-        string defPath = Application.StartupPath + "//bin//def";
+        string binLocation = Application.StartupPath + "\\bin";
+        string defPath = Application.StartupPath + "\\bin\\def";
         string _comOUT = "RC7_SCRIPT";
+        string scriptPath = Application.StartupPath + "\\bin\\scripts\\";
         Communication com = new Communication();
 
         public ScriptEditor()
@@ -141,6 +142,45 @@ namespace RC7_UI
         private void button1_Click(object sender, EventArgs e)
         {           
             com.sendPipeData(_comOUT, getScript(webBrowser1));
+        }
+
+        void runJS(string js, WebBrowser bs)
+        {
+            HtmlElement head = bs.Document.GetElementsByTagName("head")[0];
+            HtmlElement script = bs.Document.CreateElement("script");
+            IHTMLScriptElement element = (IHTMLScriptElement)script.DomElement;
+            element.text = js;
+            head.AppendChild(script);
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WebBrowser bs = webBrowser1;
+            OpenFileDialog file = new OpenFileDialog();
+            string _LoadFile = "";
+
+            file.InitialDirectory = scriptPath;
+            file.Filter = "Lua Files|*.lua;*.txt";
+            file.Multiselect = false;
+
+            if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                _LoadFile = file.FileName;
+            }
+
+            try
+            {
+                StreamReader sr = new StreamReader(_LoadFile);
+                string Script = sr.ReadToEnd();
+                sr.Dispose();
+                string ScriptFormatted = Script.Replace("\"", @"\""");
+                string ScriptLined = ScriptFormatted.Replace(Environment.NewLine, @"\n");
+                string Formatted = @"" + "SetText(\"" + ScriptLined + @"""" + ")";
+                string Final = Formatted.Replace(@"\\", @"\");
+                string Finala = Final.Replace(@"\\", @"\");
+                runJS(Finala, bs);
+            }
+            catch (Exception) { }
         }
     }
 }
