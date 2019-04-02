@@ -23,8 +23,7 @@ namespace RC7_UI
         string binLocation = Application.StartupPath + "//bin";
         string defPath = Application.StartupPath + "//bin//def";
 
-        string _comIN = "RC7_OUT";
-        string _comOUT = "RC7_IN";
+        string _comOUT = "RC7_SCRIPT";
 
         Communication com = new Communication();
 
