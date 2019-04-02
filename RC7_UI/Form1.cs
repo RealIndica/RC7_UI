@@ -394,7 +394,7 @@ namespace RC7_UI
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int lastidx = tabControl1.SelectedIndex;
+            tabControl1.TabPages.Remove(tabControl1.SelectedTab);
         }
 
         private void tabControl1_MouseDown(object sender, MouseEventArgs e)
