@@ -65,7 +65,8 @@
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.richTextBox1.Size = new System.Drawing.Size(264, 53);
             this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "Initialized";
+            this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Output
             // 

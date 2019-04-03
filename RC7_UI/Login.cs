@@ -36,14 +36,28 @@ namespace RC7_UI
 
         private void Login_Load(object sender, EventArgs e)
         {
-            main = Image.FromFile(_tempThemeDir + "MainUi.bmp");
-            idle = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
-            side = Image.FromFile(_tempThemeDir + "Hide_Side.bmp");
-            hover = Image.FromFile(_tempThemeDir + "Button_Hover.bmp");
+            try
+            {
+                main = Image.FromFile(_tempThemeDir + "MainUi.bmp");
+                idle = Image.FromFile(_tempThemeDir + "Button_Idle.bmp");
+                side = Image.FromFile(_tempThemeDir + "Hide_Side.bmp");
+                hover = Image.FromFile(_tempThemeDir + "Button_Hover.bmp");
+            } catch (Exception)
+            {
+                MessageBox.Show("Unable to load theme correctly.\r\nPlease make sure all files are in the temp directory or reinstall RC7.", "Theme Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+            }
+
+            Extensions.configReader cr = new Extensions.configReader(this);
+            cr.readConfig();
 
             alphaBlendTextBox1.BorderStyle = BorderStyle.None;
             alphaBlendTextBox2.BorderStyle = BorderStyle.None;
             button1.FlatStyle = FlatStyle.Flat;
+
+            /*Color invert = Color.FromArgb(alphaBlendTextBox1.ForeColor.ToArgb()^0xffffff);
+            alphaBlendTextBox1.BackColor = invert;
+            alphaBlendTextBox2.BackColor = invert;*/
 
             this.BackgroundImage = main;
             button1.BackgroundImage = idle;
